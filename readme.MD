@@ -27,7 +27,7 @@ Sample Record :
 {"artist": null, "auth": "Logged In", "firstName": "Walter", "gender": "M", "itemInSession": 0, "lastName": "Frye", "length": null, "level": "free", "location": "San Francisco-Oakland-Hayward, CA", "method": "GET","page": "Home", "registration": 1540919166796.0, "sessionId": 38, "song": null, "status": 200, "ts": 1541105830796, "userAgent": "\"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/36.0.1985.143 Safari\/537.36\"", "userId": "39"}
 ```
 
-## **Project files**
+## Project files
 
 ```sql_queries.py``` : This script contains SQL queries in order to drop, create and insert tables.
 
@@ -35,7 +35,7 @@ Sample Record :
 
 ```etl.py``` : This script is the automation process of ```etl.ipynb```, it reads and loads **song_data** and **log_data**.
 
-## 2. Database schema design and ETL pipeline
+## Database schema design and ETL pipeline
 
 The project is divided into 3 important steps :
 - Create tables with a star schema 
@@ -76,10 +76,7 @@ songplays - records in event data associated with song plays.
 
     start_time, hour, day, week, month, year, weekday
 
-2. Building ETL processes 
 
-In order to test the data from *Song* and *Log* *datasets*, I run some test on etl.ipynb notebook. In this notebook, all the files from both datasets are extracted and processed to be then inserted into the right table. As the datasets are json files, they are loaded with pandas package and processed as a DataFrame to a list to be inserted via execution of a query through Postgres._songs_ and _artists_ tables are filled from *Song* *dataset* and _time_ and _users_ table are completed with *Log* *dataset*. In order to fill in _songplays_ table, both datasets are needed and to get the song ID and artist ID, I needed to query the songs and artists tables to find matches based on song title, artist name, and song duration time. During the whole exercice on this notebook, a connection was created to communicate with Sparkify database and then closed before ending the jupyter notebook. Next, to explore the database, a few lines of SELECT queries are tested into test.ipynb to see if the data is actually filled with etl.ipynb.
+## Environment 
 
-## 3. Environment 
-
-## 4. How to Run
+## How to Run
