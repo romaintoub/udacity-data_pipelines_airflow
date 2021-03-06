@@ -34,13 +34,11 @@ The project is divided into 2 important steps :
 - 1. Create tables with a star schema 
 - 2. Building ETL Pipeline 
 
-1. Create tables with a Star Schema 
+### 1. Create tables with a Star Schema 
 
 ![Sparkify Schema](./images/sparkify_schema.jpg)
 
 The project is composed of one fact table and four dimension tables. The fact table, named _songplays_, records in log data associated with song plays. This table provides the metrics of the data I want to extract. The dimension tables provide information related to different dimensions of the fact table, such as _users_, _songs_, _artists_ and _time_ which records respectively the users, the songs, the artists and the timestamp of records in _songplays_ broken down into different units. The final tables are created by SQL queries in ```sql_queries.py```.
-
-## Schema for Song Play Analysis
 
 #### Fact Table
 
@@ -66,13 +64,13 @@ songplays - records in event data associated with song plays.
 
     start_time, hour, day, week, month, year, weekday
 
-2. Building ETL Pipelines
+### 2. Building ETL Pipelines
 
 Airflow is a platform to programmatically author, schedule and monitor workflows.It is often useful to visualize complex data flows using a graph. Visually, a node in a graph represents a task, and an arrow represents the dependency of one task on another. Given that data only needs to be computed once on a given task and the computation then carries forward, the graph is directed and acyclic. This is why Airflow jobs are commonly referred to as “DAGs” (Directed Acyclic Graphs).
 
 ![DAG](./images/dag.png)
 
-### Operators
+#### Operators
 
 DAGS shows how the pipelines are built, and how task is dependent to another. Tasks are described as operators, it shows what to do in a data pipeline.
 
